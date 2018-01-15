@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 
 var {mongoose} = require('./db/mongoose');
 var {Product} = require('./models/product');
+var {ObjectID} = require('mongodb');
 
 var app = express();
 app.use(bodyParser.json());
@@ -18,6 +19,20 @@ app.get('/products', (req, res) => {
     res.status(400).send(e);
   });
 });
+
+app.get('/products/:id', (req, res) => {
+	var id = req.params.id;
+
+	if (!ObjectID.isValid(id)) {
+		return res.status(404).send();
+	}
+
+	Product.find({_id: id}).then((doc) => {
+		res.send(doc);
+	}, (e) => {
+		res.status(400).send();
+	})
+})
 
 app.post('/products', (req, res) => {
   var product = new Product({
