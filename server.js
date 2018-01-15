@@ -21,17 +21,17 @@ app.get('/products', (req, res) => {
 });
 
 app.get('/products/:id', (req, res) => {
-	var id = req.params.id;
+  var id = req.params.id;
 
-	if (!ObjectID.isValid(id)) {
-		return res.status(404).send();
-	}
+  if (!ObjectID.isValid(id)) {
+    return res.status(404).send();
+  }
 
-	Product.find({_id: id}).then((doc) => {
-		res.send(doc);
-	}, (e) => {
-		res.status(400).send();
-	})
+  Product.find({_id: id}).then((doc) => {
+    res.send(doc);
+  }, (e) => {
+    res.status(400).send();
+  })
 });
 
 app.post('/products', (req, res) => {
@@ -46,6 +46,20 @@ app.post('/products', (req, res) => {
   }, (e) => {
     res.status(400).send(e);
   });
+});
+
+app.delete('/products/:id', (req, res) => {
+  var id = req.params.id;
+
+  if (!ObjectID.isValid(id)) { 
+    return res.status(404).send();
+  }
+
+  var product = Product.deleteOne({_id: id}).then((doc) => {
+    return res.send(doc);
+  }, (e) => { 
+    return res.status(400).send(e);
+  })
 });
 
 app.listen(3000, () => { 

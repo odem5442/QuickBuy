@@ -11,7 +11,8 @@ Product Catalog service is implemented in Node.js (Express.js) and MongoDB.
 
 `POST /products` - Create a new product, by accepting a payload
 
-...
+`DELETE /products/:id` - Delete a particular product
+
 
 ## Order Service 
 
