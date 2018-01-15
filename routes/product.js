@@ -1,8 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 
-var {mongoose} = require('./db/mongoose');
-var {Product} = require('./models/product');
+var {mongoose} = require('./../db/mongoose');
+var {Product} = require('./../models/product');
 var {ObjectID} = require('mongodb');
 
 var app = express();
