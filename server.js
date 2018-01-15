@@ -32,7 +32,7 @@ app.get('/products/:id', (req, res) => {
 	}, (e) => {
 		res.status(400).send();
 	})
-})
+});
 
 app.post('/products', (req, res) => {
   var product = new Product({
@@ -46,7 +46,7 @@ app.post('/products', (req, res) => {
   }, (e) => {
     res.status(400).send(e);
   });
-})
+});
 
 app.listen(3000, () => { 
   console.log("Yep! Server started on port 3000");

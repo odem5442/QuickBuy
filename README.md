@@ -1,8 +1,8 @@
 # QuickBuy
 
-Simple eCommerce application to implementing difference components using microservice architecture. 
+Simple eCommerce application implementing difference components of the app in a microservice architecture. 
 
-## Product Catalog
+## Products Service
 Product Catalog service is implemented in Node.js (Express.js) and MongoDB. 
 
 `GET /products` - Returns list of all products
@@ -12,3 +12,7 @@ Product Catalog service is implemented in Node.js (Express.js) and MongoDB.
 `POST /products` - Create a new product, by accepting a payload
 
 ...
+
+## Order Service 
+
+`POST /orders` - Create a new order record
