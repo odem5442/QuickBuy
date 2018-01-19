@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Product = mongoose.model('Product', {
   name: {
     type: String,
-	required: true,
+	  required: true,
     minlength: 1,
     trim: true
   },
