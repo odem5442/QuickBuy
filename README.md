@@ -3,7 +3,7 @@
 Simple eCommerce application implementing difference components of the app in a microservice architecture. 
 
 ## Products Service
-Product Catalog service is implemented in Node.js (Express.js) and MongoDB. 
+Technologies used: Node.js, MongoDB and Docker. Used express.js framework with mongoose layer to interact with nosql db
 
 `GET /products` - Returns list of all products
 
