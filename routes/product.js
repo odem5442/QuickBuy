@@ -1,3 +1,5 @@
+require('../config/config');
+
 var express = require('express');
 var bodyParser = require('body-parser');
 
@@ -7,6 +9,8 @@ var {ObjectID} = require('mongodb');
 
 var app = express();
 app.use(bodyParser.json());
+
+const port = process.env.PORT;
 
 app.get('/', (req, res) => {
   res.send("Hellooooo");
@@ -62,8 +66,8 @@ app.delete('/products/:id', (req, res) => {
   })
 });
 
-app.listen(3000, () => { 
-  console.log("Yep! Server started on port 3000");
+app.listen(port, () => { 
+  console.log(`Yep! Server started on port ${port}`);
 });
 
 module.exports = {app};
