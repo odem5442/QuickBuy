@@ -1,9 +1,9 @@
 version: "2"
 services:
-  app:
-    build: . 
+  catalog:
+    build: catalog-service/ 
     volumes: 
-      - .:/app
+      - .:/catalog-service
     ports: 
       - "3000:3000"
     links: 
